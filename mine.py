@@ -6,7 +6,7 @@ The idea of dynamic programming is explained in a simple way in
 Aditya Y. Bhargava book, titled "Grokking Algorithms".
 Dynamic programming consists of breaking the problems into subproblems.
 To get the most efficient code solution I adapt solution from  site
-https://codereview.stackexchange.com/questions/20569/dynamic-programming-knapsack-solution/20581#20581
+"https://codereview.stackexchange.com/questions/20569/dynamic-programming-knapsack-solution/20581#20581
 "
 
 
