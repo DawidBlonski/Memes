@@ -10,6 +10,7 @@ calculates the best set of memes, so that he can sell the USB stick for the high
 "
 
 # Explanation
+To solve this task I used a dynamic programming.
 When we use dynamic programming, we build a grid.
 The rows of the grid are the items and the columns are USB memory.
 We fill each cell of the grid. To fill blank we must count max value of the previous max cell vs
