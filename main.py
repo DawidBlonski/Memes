@@ -6,7 +6,7 @@ The idea of dynamic programming is explained in a simple way in
 Aditya Y. Bhargava book, titled "Grokking Algorithms".
 Dynamic programming consists of breaking the problems into subproblems.
 To get the most efficient code solution I adapt solution from  site
-https://codereview.stackexchange.com/questions/20569/dynamic-programming-knapsack-solution/20581#20581
+"https://codereview.stackexchange.com/questions/20569/dynamic-programming-knapsack-solution/20581#20581
 "
 
 """
@@ -40,3 +40,15 @@ def calculate(usb_size: int, memes: List[Tuple[str, int, int]]) -> Tuple[int, Se
             mems.add(memes[i][0])
             usb_size -= memes[i][1]
     return result, mems
+<<<<<<< HEAD:main.py
+=======
+
+
+usb_size = 1
+memes = [
+('rollsafe.jpg', 205, 6),
+('sad_pepe_compilation.gif', 410, 10),
+('yodeling_kid.avi', 605, 12)
+]
+print(calculate(usb_size, memes))
+>>>>>>> d3c8bb921c6ec04adff167efe293a875e9ecad22:mine.py
