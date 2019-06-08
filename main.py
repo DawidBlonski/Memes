@@ -40,15 +40,6 @@ def calculate(usb_size: int, memes: List[Tuple[str, int, int]]) -> Tuple[int, Se
             mems.add(memes[i][0])
             usb_size -= memes[i][1]
     return result, mems
-<<<<<<< HEAD:main.py
-=======
 
 
-usb_size = 1
-memes = [
-('rollsafe.jpg', 205, 6),
-('sad_pepe_compilation.gif', 410, 10),
-('yodeling_kid.avi', 605, 12)
-]
-print(calculate(usb_size, memes))
->>>>>>> d3c8bb921c6ec04adff167efe293a875e9ecad22:mine.py
+
