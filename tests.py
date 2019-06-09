@@ -1,4 +1,4 @@
-from mine import calculate
+from main import calculate
 
 
 def test_data_test():
