@@ -14,25 +14,27 @@ import sys
 
 '''Function find the most profitable set of mems '''
 def calculate(usb_size: int, memes: List[Tuple[str, int, int]]) -> Tuple[int, Set[str]]:
-    memes = list(set(memes))
-    result = 0
-    mems = set()
-    usb_size = usb_size * 1024
-
-    'Finds the most profitable set'
-
-    @lru_cache(maxsize=None)
-    def bestvalue(i, usb_size):
-        if usb_size < 0:
-            'Return infinity helps find the smallest value'
-            return float('-inf')
-        if i == 0:
-            return 0
-        _, weight, value = memes[i - 1]
-        return max(
-            bestvalue(i - 1, usb_size), bestvalue(i - 1, usb_size - weight) + value
-        )
     try:
+        memes = list(set(memes))
+        result = 0
+        mems = set()
+        if isinstance(usb_size,int):
+            usb_size = usb_size*1024
+
+
+        'Finds the most profitable set'
+
+        @lru_cache(maxsize=None)
+        def bestvalue(i, usb_size):
+            if usb_size < 0:
+                'Return infinity helps find the smallest value'
+                return float('-inf')
+            if i == 0:
+                return 0
+            _, weight, value = memes[i - 1]
+            return max(
+                bestvalue(i - 1, usb_size), bestvalue(i - 1, usb_size - weight) + value
+            )
         for i in reversed(range(len(memes))):
             if bestvalue(i + 1, usb_size) != bestvalue(i, usb_size):
                 result += memes[i][2]
@@ -42,18 +44,21 @@ def calculate(usb_size: int, memes: List[Tuple[str, int, int]]) -> Tuple[int, Se
 
     except TypeError as msg:
         print(msg, file=sys.stderr)
-        print('Type error')
+        print('Type error ')
         exit()
 
     except ValueError as msg:
         print(msg, file=sys.stderr)
-        print('Index Error : too many values ')
+        print('Index Error : too many values')
         exit()
+
+
+
 if __name__ == '__main__':
-    usb_size =1
+    usb_size = 1
     memes = [
         ('rollsafe.jpg', 205, 1),
         ('sad_pepe_compilation.gif', 410, 10),
         ('yodeling_kid.avi', 605, 12)
     ]
-    print(calculate(usb_size, memes))
+    print(calculate(usb_size,memes))
